@@ -6,9 +6,6 @@ import springfive.cms.domain.models.User;
 import springfive.cms.domain.repository.UserRepository;
 import springfive.cms.domain.vo.UserRequest;
 
-/**
- * @author claudioed on 29/10/17. Project cms
- */
 @Service
 public class UserService {
 
