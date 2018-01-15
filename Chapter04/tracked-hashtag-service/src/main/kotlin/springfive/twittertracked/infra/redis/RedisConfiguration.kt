@@ -6,9 +6,6 @@ import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory
 import org.springframework.data.redis.core.ReactiveRedisTemplate
 import org.springframework.data.redis.serializer.RedisSerializationContext
 
-/**
- * @author claudioed on 06/12/17.
- */
 @Configuration
 open class RedisConfiguration {
 
