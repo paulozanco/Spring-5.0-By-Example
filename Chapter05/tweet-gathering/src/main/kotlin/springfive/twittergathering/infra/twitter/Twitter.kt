@@ -5,9 +5,6 @@ import springfive.twittergathering.infra.twitter.EncodeUtils.computeSignature
 import springfive.twittergathering.infra.twitter.EncodeUtils.encode
 import java.util.*
 
-/**
- * @author claudioed on 18/12/17.
- */
 object Twitter {
 
     private val SIGNATURE_METHOD = "HMAC-SHA1"

@@ -8,10 +8,6 @@ import javax.crypto.Mac
 import javax.crypto.spec.SecretKeySpec
 
 
-/**
- * @author claudioed on 18/12/17.
- * Project twitter-consumer
- */
 object EncodeUtils {
 
     fun encode(value: String): String {

@@ -9,9 +9,6 @@ import springfive.twittergathering.domain.TrackedHashTag
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.TimeUnit
 
-/**
- * @author claudioed on 10/12/17.
- */
 @Service
 class TwitterGatherRunner(private val twitterGatherService: TweetGatherService,private val rabbitTemplate: RabbitTemplate) {
 

@@ -12,9 +12,6 @@ import springfive.twittergathering.infra.twitter.TwitterAppSettings
 import springfive.twittergathering.infra.twitter.TwitterToken
 
 
-/**
- * @author claudioed on 10/12/17.
- */
 @Service
 class TweetGatherService(private val twitterAppSettings: TwitterAppSettings,
                          private val twitterToken: TwitterToken,

@@ -12,9 +12,6 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 
-/**
- * @author claudioed on 20/12/17.
- */
 @Configuration
 open class RabbitMQConfiguration(@Value("\${queue.twitter}") private val queue:String,
                                  @Value("\${exchange.twitter}") private val exchange:String,
