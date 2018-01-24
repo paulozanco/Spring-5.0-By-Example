@@ -10,9 +10,6 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import reactor.rabbitmq.Receiver
 
-/**
- * @author claudioed on 26/12/17.
- */
 @Service
 class TwitterDispatcher(private @Value("\${queue.twitter}") val queue: String,
                         private val receiver: Receiver,

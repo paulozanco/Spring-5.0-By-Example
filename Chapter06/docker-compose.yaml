@@ -1,0 +1,50 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3.7.0-management-alpine
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - solution
+  redis:
+    image: "redis:4.0.6-alpine"
+    hostname: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - solution
+  tracked:
+    image: springfivebyexample/tracked_hashtag
+    ports:
+      - "9090:9090"
+    networks:
+      - solution
+    depends_on:
+      - redis
+      - rabbitmq
+  gathering:
+    image: springfivebyexample/tweet_gathering
+    ports:
+      - "8081:8081"
+    networks:
+      - solution
+    environment:
+      - CONSUMER_KEY=gupfxwn43NBTdxCD3Tsf1JgMu
+      - CONSUMER_SECRET=pH4uM5LlYxKzfJ7huYRwFbaFXn7ooK01LmqCP69QV9a9kZrHw5
+      - ACCESS_TOKEN=940015005860290560-m0WwSyxGvp5ufff9KW2zm5LGXLaFLov
+      - ACCESS_TOKEN_SECRET=KSofGB8aIwDmewceKXLbN8d5chvZkZyB31VZa09pNBhLo
+    depends_on:
+      - rabbitmq
+  dispatcher:
+    image: springfivebyexample/tweet_dispatcher
+    ports:
+      - "9099:9099"
+    networks:
+      - solution
+    depends_on:
+      - rabbitmq
+networks:
+  solution:
+    driver: bridge

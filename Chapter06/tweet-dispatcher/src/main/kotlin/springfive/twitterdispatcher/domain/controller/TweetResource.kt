@@ -9,9 +9,6 @@ import reactor.core.publisher.Flux
 import springfive.twitterdispatcher.domain.service.Tweet
 import springfive.twitterdispatcher.domain.service.TwitterDispatcher
 
-/**
- * @author claudioed on 26/12/17.
- */
 @RestController
 @RequestMapping("/tweets")
 class TweetResource(private val dispatcher: TwitterDispatcher) {

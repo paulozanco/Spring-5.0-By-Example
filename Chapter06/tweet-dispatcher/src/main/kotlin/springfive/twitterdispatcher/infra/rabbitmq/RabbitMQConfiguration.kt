@@ -11,9 +11,6 @@ import reactor.rabbitmq.Receiver
 import reactor.rabbitmq.ReceiverOptions
 
 
-/**
- * @author claudioed on 20/12/17.
- */
 @Configuration
 class RabbitMQConfiguration(private @Value("\${spring.rabbitmq.host}") val host: String,
                             private @Value("\${spring.rabbitmq.port}") val port: Int,

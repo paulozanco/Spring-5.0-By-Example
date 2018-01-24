@@ -1,15 +1,17 @@
-package springfive.twitterdispatcher
+package springfive.twittergathering
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication
-class TweetDispatcherApplication {
+@EnableScheduling
+open class TweetGatheringApplication {
 
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            SpringApplication.run(TweetDispatcherApplication::class.java, *args)
+            SpringApplication.run(TweetGatheringApplication::class.java, *args)
         }
     }
 
