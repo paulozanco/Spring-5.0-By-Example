@@ -8,7 +8,8 @@ import springfive.twittertracked.domain.repository.TrackedHashTagRepository
 class TrackedHashTagService(private val repository: TrackedHashTagRepository) {
 
     fun save(hashTag: TrackedHashTag) {
-        this.repository.save(hashTag)
+        val trackedHashTag = this.repository.save(hashTag)
+        println(trackedHashTag)
     }
 
     fun all() = this.repository.findAll()
