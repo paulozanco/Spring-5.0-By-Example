@@ -9,8 +9,10 @@ import springfive.twittertracked.domain.TrackedHashTag
 @Repository
 class TrackedHashTagRepository(private val redisTemplate: ReactiveRedisTemplate<String, String>) {
 
-    fun save(trackedHashTag: TrackedHashTag): Mono<TrackedHashTag>? {
-        return this.redisTemplate.opsForSet().add("hash-tags", "${trackedHashTag.hashTag}:${trackedHashTag.queue}").flatMap { Mono.just(trackedHashTag) }
+    fun save(trackedHashTag: TrackedHashTag): Mono<TrackedHashTag> {
+        return this.redisTemplate.opsForSet()
+                .add("hash-tags", "${trackedHashTag.hashTag}:${trackedHashTag.queue}")
+                .flatMap( { data -> Mono.just(trackedHashTag)})
     }
 
     fun findAll(): Flux<TrackedHashTag> {
